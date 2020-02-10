@@ -147,7 +147,14 @@ namespace CrackerChase
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            updateGamePlay(gameTime);
+            if(currentState == GameStates.PlayingScreen)
+            {
+                updateGamePlay(gameTime);
+            }
+            else
+            {
+
+            }
             base.Update(gameTime);
         }
 
@@ -238,8 +245,14 @@ namespace CrackerChase
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            drawGamePlay();
+            if(currentState == GameStates.PlayingScreen)
+            {
+                drawGamePlay();
+            }
+            else
+            {
 
+            }
             base.Draw(gameTime);
         }
 
