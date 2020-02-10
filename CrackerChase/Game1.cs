@@ -58,10 +58,10 @@ namespace CrackerChase
             timer = 600;
             score = 0;
 
-           
+
         }
 
-      
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -130,9 +130,26 @@ namespace CrackerChase
         }
 
 
-     
 
-        
+
+        /// <summary>
+        /// Check for the pressing of the Space Bar
+        /// If pressed start the game.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected void UpdateStartScreen(GameTime gameTime)
+        {
+            KeyboardState keys = Keyboard.GetState();
+
+            if (keys.IsKeyDown(Keys.Space))
+            {
+                startPlayingGame();
+            }
+
+        }
+
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -218,8 +235,8 @@ namespace CrackerChase
             base.Update(gameTime);
         }
 
-        
-        
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
